@@ -1,7 +1,9 @@
 # Load Data
 
 library(readstata13)
+library(foreign)
 library(dplyr)
+library(tidyr)
 
 # Find all .dta files in existing structure and subset relevent sets into list
 if(Sys.info()["nodename"] == "CLT-0716-1549")  {
