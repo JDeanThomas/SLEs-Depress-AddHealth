@@ -17,7 +17,6 @@ if(Sys.info()["nodename"] == "CLT-0716-1549")  {
 }
 
 files <- files[1:19]
-
  
 # Function to add factor level "." to factor variables with NAs in order to maintain 
 # existing code base after R 3.4 premenantly depreciated handling of factor levels
