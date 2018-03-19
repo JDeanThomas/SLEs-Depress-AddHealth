@@ -18,17 +18,7 @@ if(Sys.info()["nodename"] == "CLT-0716-1549")  {
 
 files <- files[1:19]
 
-# # Loop to combine selected datasets 
-# setJoin <- function(files, setStart, setEnd) {
-#     df <- read.dta(files[setStart])
-#         if (grepl("0003", files[setStart]) == TRUE) 
-#             df$RRELNO <- as.integer(df$RRELNO)
-#     for (i in seq(setStart+1, setEnd))
-#         df2 <- read.dta(files[i])
-#         df <- left_join(df, df2)
-# }    
-
-
+ 
 # Function to add factor level "." to factor variables with NAs in order to maintain 
 # existing code base after R 3.4 premenantly depreciated handling of factor levels
 # missing explicit codes in Sata data files imported via foreign::read.dta()
