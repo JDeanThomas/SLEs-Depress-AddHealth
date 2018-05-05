@@ -1,11 +1,8 @@
 # Validate the SLE index in AddHealth.
 
-# 1) create proto_SLE = (# endorsed item) / (total number of items for that subject)
-
-# 2) standardize proto_SLE by wave: SLE_index = (proto_SLE - (wave-specific mean 
-# of proto_SLE)) / (SD of proto_SLE)
-
-#3) assess association of SLE_index (and each SL item separately) to the depression 
+# 1) create proto_SLE 
+# 2) standardize proto_SLE by wave
+# 3) assess association of SLE_index (and each SL item separately) to the depression 
 # measures in "*Dropbox\adhealth_sexuality\dep9_good.dta"
 
 source("CodeSLEs.R")
@@ -161,19 +158,5 @@ Waves <- full_join(Waves, WaveIII)
 Waves <- full_join(Waves, WaveIV)
 
 which(!names(Waves) %in% names(Waves2))
-
-
-
-# Test
-test <- as.data.frame(cbind(c(1, 2, 3, 4 ,5), c(1, 3, 4, NA, 4), c(4, NA, 3, NA, NA), 
-              c(NA, NA, NA, NA, 1), c(4, 1, 2, ".", NA)))
-# Make one a factor
-test[5] <- lapply(test[5], factor)
-# Index
-t <- c(2, 4:5)
-# Convert factor colums to numeric (or integer)
-test <- apply(test, 2, function(x) as.numeric(x))
-# Find subset of colums who rows are all NAs
-test[apply(is.na(test[, t]), 1, all), ]
 
 
